@@ -17,8 +17,9 @@
 }
 
 /* Global styling */
-
-* {
+*,
+*::before,
+*::after {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -46,10 +47,12 @@ body {
 #body-bg::before {
 	position: absolute;
 	content: '';
-	height: 100%;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 	top: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
 	background-color: var(--dark);
 	opacity: 0.85;
 	z-index: -1;
@@ -67,9 +70,21 @@ h1 {
 	color: var(--x-light);
 }
 
+input {
+	padding: 0.3rem;
+}
+
 .container {
 	width: 90%;
 	margin: 0 auto;
+}
+
+.pad-pt5 {
+	padding: 0.5rem;
+}
+
+.pad-pt3 {
+	padding: 0.3rem;
 }
 
 .main-style {
@@ -81,6 +96,7 @@ h1 {
 
 .header,
 .content,
+.form,
 .footer {
 	flex-shrink: 0;
 }
@@ -124,6 +140,12 @@ h1 {
 	/* transform: translateX(0, 100%); */
 }
 
+.brand-heading {
+	margin: 10% auto 0 auto;
+	font-size: 4rem;
+	color: var(--june-bud);
+}
+
 .content {
 	display: flex;
 	order: 2;
@@ -154,16 +176,88 @@ button.get-started a {
 	font-weight: 500;
 }
 
+.form-area {
+	display: flex;
+	order: 2;
+	flex-grow: 1;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* background-color: var(--x-light); */
+}
+
+form {
+	background-color: var(--x-light);
+	padding: 1.5rem 0.625rem;
+	border-radius: 5px;
+	min-width: 150px;
+}
+
+input {
+	padding: 0.3rem 0.5rem;
+	border: none;
+	line-height: 1.3rem;
+	border-bottom: 2px solid var(--dark);
+}
+
+.flex-wrap {
+	width: 100%;
+	margin-bottom: 0.7rem;
+	display: flex;
+}
+
+.flex-wrap input {
+	width: 100%;
+	flex-grow: 1;
+}
+
+.flex-wrap label {
+	width: 110px;
+	margin-right: 0;
+}
+
+.full-name {
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+.form-submit {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.form-submit input[type='submit'] {
+	padding: 0.7rem 0.9rem;
+	font-size: 1rem;
+	background-color: var(--dark);
+	color: var(--x-light);
+	flex-grow: 0.8;
+	margin-right: 5px;
+	font-weight: normal;
+	border-radius: 5px;
+	transition: all 500ms ease-in-out;
+}
+
+.form-submit input[type='submit']:hover {
+	background-color: var(--rusty-red);
+	font-weight: bold;
+	cursor: pointer;
+}
+
 .footer {
 	display: flex;
 	order: 99;
 	justify-content: center;
-	font-size: 0.6em;
-	padding-bottom: 10px;
+	font-size: 0.75rem;
+	padding-bottom: 0.625rem;
 }
 
 .footer li {
-	margin-left: 20px;
+	margin-left: 1.25rem;
+	color: var(--x-light);
 }
 
 li.footer-list a {
