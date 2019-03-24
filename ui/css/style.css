@@ -197,6 +197,9 @@ form {
 	padding: 1.5rem 0.625rem;
 	border-radius: 5px;
 	min-width: 150px;
+	-webkit-box-shadow: 5px 5px 10px 5px rgba(79, 45, 127, 1);
+	-moz-box-shadow: 5px 5px 10px 5px rgba(79, 45, 127, 1);
+	box-shadow: 5px 5px 10px 5px rgba(79, 45, 127, 1);
 }
 
 input {
