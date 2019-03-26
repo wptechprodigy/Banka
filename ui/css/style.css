@@ -28,6 +28,7 @@
 body {
 	font-family: var(--Merriweather-family);
 	overflow: hidden;
+	background-color: rgba(240, 234, 241, 0.986);
 }
 
 html,
@@ -87,7 +88,8 @@ input {
 	padding: 0.3rem;
 }
 
-.main-style {
+.main-style,
+.dashboard-main-style {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -130,14 +132,18 @@ input {
 .header nav li a {
 	font-family: var(--fira-family);
 	margin-left: 20px;
-	padding-bottom: 3px;
+	padding: 3px;
 	color: var(--x-light);
 	transition: all 0.5s ease-in-out;
 }
 
 .header nav li a:hover {
 	border-bottom: 2px solid var(--june-bud);
-	/* transform: translateX(0, 100%); */
+}
+
+.dashboard-header {
+	background-color: var(--dark);
+	padding-bottom: 5px;
 }
 
 .brand-heading {
@@ -159,7 +165,7 @@ h3.sub-brand-heading {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 18% auto;
+	/* margin: 18% auto; */
 	text-align: center;
 }
 
@@ -265,8 +271,8 @@ input {
 	background-color: var(--dark);
 	color: var(--x-light);
 	flex-grow: 0.8;
-	margin-right: 5px;
-	border-radius: 5px;
+	margin-right: 0.3125rem;
+	border-radius: 0.3125rem;
 	transition: all 500ms ease-in-out;
 }
 
@@ -281,8 +287,9 @@ input {
 	order: 99;
 	justify-content: center;
 	font-size: 0.7rem;
-	padding-bottom: 0.625rem;
-	opacity: 0.8;
+	/* padding-bottom: 0.625rem; */
+	align-items: center;
+	line-height: 1.875rem;
 }
 
 .footer li {
@@ -291,5 +298,10 @@ input {
 }
 
 li.footer-list a {
+	opacity: 0.5;
 	color: var(--x-light);
+}
+
+.dashboard-footer {
+	background-color: var(--dark);
 }
