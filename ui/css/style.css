@@ -358,6 +358,7 @@ input {
 	text-align: left;
 }
 
+.transac-history table thead tr th,
 .transac-history table tbody tr td {
 	text-align: center;
 }
@@ -366,7 +367,7 @@ input {
 	border: none;
 	padding: 0.312rem 0.625rem;
 	border-radius: 0.312rem;
-	transition: all 500ms ease-in-out;
+	transition: all 250ms ease-in-out;
 	background-color: var(--june-bud);
 }
 
