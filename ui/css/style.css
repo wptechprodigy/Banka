@@ -14,6 +14,7 @@
 	--rusty-red: #d7263d;
 	--x-light: #d2b5ff;
 	--june-bud: #c5d86d;
+	--font-color: #252525;
 }
 
 /* Global styling */
@@ -29,6 +30,7 @@ body {
 	font-family: var(--Merriweather-family);
 	overflow: hidden;
 	background-color: rgba(240, 234, 241, 0.986);
+	color: var(--font-color);
 }
 
 html,
@@ -86,6 +88,12 @@ input {
 
 .pad-pt3 {
 	padding: 0.3rem;
+}
+
+.marg-tb-pt6 {
+	/* marg-tb = margin top and bottom */
+	margin-top: 1rem;
+	margin-bottom: 0.625rem;
 }
 
 .main-style,
@@ -280,6 +288,119 @@ input {
 	background-color: var(--rusty-red);
 	transform: scale(1.01);
 	cursor: pointer;
+}
+
+.dashb-contents {
+	display: grid;
+	grid-template-columns: 2fr 4fr;
+	grid-column-gap: 0.625rem;
+	border: 1px solid rgba(79, 45, 127, 0.4);
+	background-color: rgba(210, 181, 255, 0.6);
+	padding: 0.312rem;
+	height: 100%;
+}
+
+.dashb-contents .dashb-profile,
+.dashb-contents .dashb-acc-details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1px solid rgba(79, 45, 127, 0.4);
+}
+
+.dashb-contents .dashb-acc-details {
+	padding: 1rem 0;
+}
+
+.dashb-contents .dashb-profile img {
+	width: 50%;
+	border-radius: 50%;
+	border: 2px solid var(--dark);
+	box-shadow: 0 0 3px 1px rgba(79, 45, 127, 0.7);
+}
+
+.user-details,
+.transac-history {
+	width: 95%;
+	padding: 0.625rem 0.312rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.user-details table,
+.transac-history table {
+	border-collapse: collapse;
+	border: 1px solid var(--dark);
+	box-shadow: 0 0 3px 1px rgba(79, 45, 127, 0.7);
+	width: 100%;
+}
+
+.user-details tr:nth-of-type(odd),
+.transac-history tr:nth-of-type(odd) {
+	background: var(--light);
+}
+
+.user-details th,
+.transac-history th {
+	background: var(--rusty-red);
+	color: #fff;
+	font-weight: bold;
+}
+
+.user-details td,
+.user-details th,
+.transac-history td,
+.transac-history th {
+	padding: 0.32rem;
+	border: 1px solid #ccc;
+	text-align: left;
+}
+
+.transac-history table tbody tr td {
+	text-align: center;
+}
+
+.transac-history table tbody tr td > button {
+	border: none;
+	padding: 0.312rem 0.625rem;
+	border-radius: 0.312rem;
+	transition: all 500ms ease-in-out;
+	background-color: var(--june-bud);
+}
+
+.transac-history table tbody tr td > button:hover {
+	cursor: pointer;
+	transform: scale(1.02);
+	color: var(--dark);
+}
+
+.acc-card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba(79, 45, 127, 0.2);
+	box-shadow: 0 0 3px 1px rgba(79, 45, 127, 0.2);
+	width: 90%;
+	padding: 0.625rem 1.2rem;
+	margin-bottom: 0.312rem;
+}
+
+.acc-card h3 {
+	font-weight: 500;
+	margin-bottom: 0.312rem;
+}
+
+.summary-listing {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 0.312rem 0;
+}
+
+.summary-listing h4,
+.summary-listing p {
+	margin: 0 0.7rem;
 }
 
 .footer {
