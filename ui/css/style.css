@@ -28,7 +28,7 @@
 
 body {
 	font-family: var(--Merriweather-family);
-	overflow: hidden;
+	overflow-y: auto;
 	background-color: rgba(240, 234, 241, 0.986);
 	color: var(--font-color);
 }
@@ -295,7 +295,6 @@ input {
 }
 
 /* Dashboard styling */
-
 .dashb-contents {
 	display: grid;
 	grid-template-columns: 2fr 4fr;
@@ -304,6 +303,7 @@ input {
 	background-color: rgba(210, 181, 255, 0.6);
 	padding: 0.312rem;
 	height: 100%;
+	margin-bottom: 1.2rem;
 }
 
 .dashb-contents .dashb-profile,
@@ -384,6 +384,67 @@ input {
 
 .transac-history .head-btn button.create-acct:hover {
 	background-color: var(--dark);
+}
+
+/* Admin dashboard styling */
+button.create-staff-admin-acct {
+	border: 0;
+	padding: 1.2rem;
+	background-color: var(--dark);
+	border-radius: 0.312rem;
+	color: var(--x-light);
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all 500ms ease-in-out;
+}
+
+button.create-staff-admin-acct:hover {
+	background-color: var(--rusty-red);
+}
+
+.a-dashb-card {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.a-dashb-card > .acc-card:first-child {
+	margin-right: 0.625rem;
+}
+
+/* Create staff account  */
+form.create-staff-acct-form {
+	box-shadow: none;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+form.create-staff-acct-form input {
+	width: 100%;
+	flex-grow: 1;
+	margin: 0.312rem 0;
+}
+
+form.create-staff-acct-form label {
+	width: 110px;
+	margin-right: 0;
+}
+
+form.create-staff-acct-form button {
+	border: 0;
+	margin-top: 1rem;
+	padding: 0.7rem 1rem;
+	border-radius: 0.312rem;
+	font-size: 0.9rem;
+	background-color: var(--dark);
+	color: var(--x-light);
+	cursor: pointer;
+	transition: all 500ms ease-in-out;
+}
+
+form.create-staff-acct-form button:hover {
+	background-color: var(--rusty-red);
 }
 
 /* Create account modal styling */
