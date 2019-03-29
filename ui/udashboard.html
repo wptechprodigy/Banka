@@ -9,6 +9,24 @@
 	</head>
 
 	<body>
+    <!-- create account modal content -->
+    <div id="create-acct-modal" class="create-modal">
+      <div class="create-acct-option">
+        <span class="close-modal">&times;</span>
+        <h3>Select Type of Account</h3>
+        <div class="select-acct-type">
+          <label for="acct-type">Select account type</label>
+          <select name="" id="acct-type">
+            <option value="">Account Type</option>
+            <option value="current">Current</option>
+            <option value="savings">Savings</option>
+          </select>
+          <button type="submit">create</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main dashboard content starts -->
 		<div class="dashboard-main-style">
 			<section>
 				<div class="dashboard-header">
@@ -82,7 +100,18 @@
 								</div>
 							</div>
               <div class="transac-history">
-                <h3 class="marg-tb-pt6">Transaction History</h3>
+                <div class="head-btn">
+                  <h3 class="marg-tb-pt6">Transaction History</h3>
+                  <!-- create account modal -->
+                  <button class="create-acct">Create an account</button>
+                  <!-- create account modal content -->
+                  <!-- <div id="create-acct-modal" class="modal">
+                    <div class="create-acct-option">
+                      <span class="close">&times;</span>
+                      <p>Select the type of account</p>
+                    </div>
+                  </div> -->
+                </div>  
                 <table>
                   <thead>
                     <tr>
@@ -126,22 +155,5 @@
 		</div>
 	</body>
 	<script src="./js/app.js"></script>
+  <script src="./js/create-acct-modal.js"></script>
 </html>
-
-<!-- <div class="dashb-tabs">
-  <button class="dashb-tab">Profile</button>
-  <button class="dashb-tab">Transaction History</button>
-  <button class="dashb-tab">Transaction Details</button>
-</div>
-<div id="profile" class="tab-content">
-  <h3>Profile</h3>
-  <p>Profile content goes here</p>
-</div>
-<div id="transac-history" class="tab-content">
-  <h3>Transaction History</h3>
-  <p>Transaction history content goes here</p>
-</div>
-<div id="transac-details" class="tab-content">
-  <h3>Transaction Details</h3>
-  <p>Transaction details content goes here</p>
-</div> -->
