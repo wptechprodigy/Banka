@@ -1,0 +1,24 @@
+{
+	"name": "Banka",
+	"version": "1.0.0",
+	"description": "Banka is a lightweight core banking application that powers banking operations like account creation, customer deposit and withdrawals.",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"deploy": "gh-pages -d ui"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wptechprodigy/Banka.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/wptechprodigy/Banka/issues"
+	},
+	"homepage": "https://github.com/wptechprodigy/Banka",
+	"dependencies": {
+		"gh-pages": "^2.0.1"
+	}
+}
