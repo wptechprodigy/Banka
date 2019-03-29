@@ -6,10 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./css/style.css" />
-  <title>Banka - User dashboard</title>
+  <title>Banka - User details</title>
 </head>
 
 <body>
+  <!-- create account modal content -->
+  <div id="create-staff-acct-modal" class="create-modal">
+    <div class="create-acct-option">
+      <span class="close-modal">&times;</span>
+      <h3>Create Staff Account</h3>
+      <form class="create-staff-acct-form" action="" method="post">
+        <div>
+          <label for="">email</label>
+          <input type="text" name="" id="email" placeholder="email address..." required>
+        </div>
+        <div>
+          <label for="">password</label>
+          <input type="password" name="" id="password" placeholder="password..." required>
+        </div>
+        <div>
+          <label for="">Confirm password</label>
+          <input type="password" name="" id="password-confirm" placeholder="password..." required>
+        </div>
+        <button type="submit">Create</button>
+      </form>
+    </div>
+  </div>
+
   <!-- Main dashboard content starts -->
   <div class="dashboard-main-style">
     <section>
@@ -26,11 +49,14 @@
     </section>
     <section class="content">
       <div class="container">
+        <h2 class="marg-tb-pt6">Welcome to your dashboard</h2>
+        <p class="marg-tb-pt6">
+          Here's Banka. staff/cashier dashboard to manage user accounts
+        </p>
         <div class="dashb-contents">
           <div class="dashb-profile">
             <img class="marg-tb-pt6" src="./img/Ned_Stark-Sean_Bean.jpg" alt="Nerd Stark" />
             <h2>Nerd Stark</h2>
-            <hr>
             <div class="user-details">
               <table>
                 <tr>
@@ -38,59 +64,52 @@
                 </tr>
                 <tr>
                   <td>First Name</td>
-                  <td>Nerd</td>
+                  <td>Balogun</td>
                 </tr>
                 <tr>
                   <td>Last Name</td>
-                  <td>Stark</td>
+                  <td>Agbabiaka</td>
                 </tr>
                 <tr>
                   <td>email</td>
-                  <td>nerdstark@winterfell.night</td>
+                  <td>b.agbabiaka@banka.bank</td>
                 </tr>
                 <tr>
-                  <td>Address</td>
-                  <td>14 April, Winterfell Lodge, GoT.</td>
+                  <td>Position</td>
+                  <td>Cashier</td>
                 </tr>
               </table>
             </div>
           </div>
           <div class="dashb-acc-details">
-            <div class="acc-card">
-              <h3>Account Summary</h3>
-              <div class="summary-listing">
-                <h4>Account No:</h4>
-                <p>0016245465</p>
-              </div>
-              <div class="summary-listing">
-                <h4>Type:</h4>
-                <p>Savings</p>
-              </div>
-              <div class="summary-listing">
-                <h4>Status:</h4>
-                <p>Active</p>
-              </div>
-              <div class="summary-listing">
-                <h4>Balance (NGN):</h4>
-                <p>4,000.00</p>
-              </div>
-            </div>
             <div class="transac-history u-specific-transaction">
-              <p class="backlink"><a href="./udashboard.html">&larr; Go Back</a></p>
+              <p class="backlink"><a href="./sdashboard.html">&larr; Go Back</a></p>
               <div class="head-btn">
-                <h3 class="marg-tb-pt6">Transaction Details</h3>
+                <h3 class="marg-tb-pt6">Account Holder Details</h3>
               </div>
               <div class="acc-card">
+                <div class="summary-listing">
+                  <h4>Full Name:</h4>
+                  <p>Nerd Stack</p>
+                </div>
+                <div class="summary-listing">
+                  <h4>Address:</h4>
+                  <p>14 April, North of The Wall, GoT</p>
+                </div>
                 <div class="summary-listing">
                   <h4>Account No:</h4>
                   <p>0016245465</p>
                 </div>
                 <div class="summary-listing">
-                  <h4>Transaction Type:</h4>
-                  <p>Deposit</p>
+                  <h4>Account Type:</h4>
+                  <p>Savings</p>
                 </div>
                 <div class="summary-listing">
-                  <h4>Date:</h4>
+                  <h4>Status:</h4>
+                  <p>Active</p>
+                </div>
+                <div class="summary-listing">
+                  <h4>Open Date:</h4>
                   <p>23/03/2019</p>
                 </div>
                 <div class="summary-listing">
@@ -98,15 +117,11 @@
                   <p>10:54:46</p>
                 </div>
                 <div class="summary-listing">
-                  <h4>Amount (NGN):</h4>
-                  <p>5,000.00</p>
-                </div>
-                <div class="summary-listing">
-                  <h4>Balance Before (NGN):</h4>
+                  <h4>Opening Amount (NGN):</h4>
                   <p>0.00</p>
                 </div>
                 <div class="summary-listing">
-                  <h4>Balance After (NGN):</h4>
+                  <h4>Current Balance (NGN):</h4>
                   <p>5,000.00</p>
                 </div>
               </div>
