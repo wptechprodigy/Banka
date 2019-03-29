@@ -519,7 +519,7 @@ form.create-staff-acct-form button:hover {
 	text-align: center;
 }
 
-.transac-history table tbody tr td > button {
+.transac-history table tbody tr td a > button {
 	border: none;
 	padding: 0.312rem 0.625rem;
 	border-radius: 0.312rem;
@@ -527,9 +527,31 @@ form.create-staff-acct-form button:hover {
 	background-color: var(--june-bud);
 }
 
-.transac-history table tbody tr td > button:hover {
+.transac-history table tbody tr td a > button:hover {
 	cursor: pointer;
 	transform: scale(1.02);
+	color: var(--dark);
+}
+
+/* Transaction Details */
+.u-specific-transaction {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.u-specific-transaction .acc-card {
+	width: 100%;
+}
+
+.transac-history p.backlink a {
+	text-align: left;
+	font-size: 0.8rem;
+	transition: all 500ms ease-in-out;
+}
+
+.transac-history p.backlink a:hover {
+	font-size: 0.9rem;
 	color: var(--dark);
 }
 
