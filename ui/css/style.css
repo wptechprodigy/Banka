@@ -96,6 +96,8 @@ input {
 	margin-bottom: 0.625rem;
 }
 
+/* Home heero area */
+
 .main-style,
 .dashboard-main-style {
 	min-height: 100%;
@@ -166,6 +168,7 @@ h3.sub-brand-heading {
 	color: var(--x-light);
 }
 
+/* Content area  */
 .content {
 	display: flex;
 	order: 2;
@@ -196,6 +199,7 @@ button.get-started a {
 	font-weight: 500;
 }
 
+/* Form styling */
 .form-area {
 	display: flex;
 	order: 2;
@@ -290,6 +294,8 @@ input {
 	cursor: pointer;
 }
 
+/* Dashboard styling */
+
 .dashb-contents {
 	display: grid;
 	grid-template-columns: 2fr 4fr;
@@ -358,6 +364,94 @@ input {
 	text-align: left;
 }
 
+.transac-history .head-btn {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	margin-bottom: 1em;
+}
+
+.transac-history .head-btn button.create-acct {
+	border: 0;
+	border-radius: 5px;
+	background-color: var(--light);
+	padding: 0.1rem 1rem;
+	cursor: pointer;
+	font-size: 1rem;
+	color: var(--x-light);
+	transition: all 250ms ease-in-out;
+}
+
+.transac-history .head-btn button.create-acct:hover {
+	background-color: var(--dark);
+}
+
+/* Create account modal styling */
+.create-modal {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(79, 45, 127, 0.5);
+}
+
+.create-acct-option {
+	background-color: var(--x-light);
+	width: 40%;
+	margin: 15% auto;
+	padding: 1.2rem;
+	border-radius: 5px;
+	box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.8);
+}
+
+.close-modal {
+	color: var(--dark);
+	float: right;
+	font-size: 1.4rem;
+	font-weight: 900;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+	color: var(--rusty-red);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* Create account type */
+.select-acct-type {
+	margin: 0.625rem 0;
+}
+
+.select-acct-type label {
+	font-size: 1rem;
+}
+
+.select-acct-type select {
+	font-size: 0.9rem;
+	padding: 0.125rem 0.312rem;
+	background-color: rgba(240, 234, 241, 0.986);
+}
+
+.select-acct-type button {
+	border: 0;
+	padding: 0.25rem 1rem;
+	border-radius: 0.312rem;
+	font-size: 0.9rem;
+	background-color: var(--dark);
+	color: var(--x-light);
+	cursor: pointer;
+	transition: all 500ms ease-in-out;
+}
+
+.select-acct-type button:hover {
+	background-color: var(--rusty-red);
+}
+
+/* Transaction table styling */
 .transac-history table thead tr th,
 .transac-history table tbody tr td {
 	text-align: center;
