@@ -406,6 +406,7 @@ button.create-staff-admin-acct:hover {
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
+	width: 95%;
 }
 
 .a-dashb-card > .acc-card:first-child {
@@ -532,6 +533,49 @@ form.create-staff-acct-form button:hover {
 	color: var(--dark);
 }
 
+/* Account Overview on Admin dashboard */
+.acct-holders > p {
+	background-color: var(--dark);
+	width: fit-content;
+	color: var(--x-light);
+	border-radius: 50%;
+	padding: 0.625rem;
+	align-items: center;
+	display: inline-block;
+}
+
+/* .acct-holders .dist-holders {
+	display: flex;
+} */
+
+/* Display all users account */
+.all-users {
+	display: flex;
+	flex-direction: column;
+}
+
+.all-users,
+.all-users .acc-card {
+	width: 100%;
+}
+
+.all-users .acc-card .row-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin-bottom: 0.625rem;
+}
+
+.acct-overview {
+	display: flex;
+	flex-direction: row;
+	font-size: 0.9rem;
+}
+
+h4.marg-l-pt6 {
+	margin-right: 0.312rem;
+}
+
 .acc-card {
 	display: flex;
 	flex-direction: column;
@@ -559,6 +603,7 @@ form.create-staff-acct-form button:hover {
 	margin: 0 0.7rem;
 }
 
+/* Footer styling */
 .footer {
 	display: flex;
 	order: 99;
