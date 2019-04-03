@@ -162,6 +162,10 @@ input {
 	color: var(--june-bud);
 }
 
+.brand-heading a {
+	color: var(--june-bud);
+}
+
 h3.sub-brand-heading {
 	margin: 0 auto;
 	font-size: 1.2rem;
@@ -648,7 +652,7 @@ h4.marg-l-pt6 {
 	background-color: var(--light);
 	border-radius: 5px;
 	cursor: pointer;
-  font-size: 0.9rem;
+	font-size: 0.9rem;
 	transition: all 500ms ease-in-out;
 }
 
