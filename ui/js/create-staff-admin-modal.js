@@ -15,7 +15,7 @@ const submitTypeOfAcctBtn = document.querySelector('button[type=submit]');
 // }
 
 submitTypeOfAcctBtn.onclick = () => {
-	location.replace('http://127.0.0.1:5500/ui/sdashboard.html');
+	location.replace('./sdashboard.html');
 };
 
 createStaffAdminAcctBtn.onclick = () =>
