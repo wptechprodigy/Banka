@@ -4,6 +4,7 @@
 	"description": "Banka is a lightweight core banking application that powers banking operations like account creation, customer deposit and withdrawals.",
 	"main": "index.js",
 	"scripts": {
+		"start-dev": "nodemon --exec babel-node api/index.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"deploy": "gh-pages -d ui"
 	},
@@ -33,6 +34,7 @@
 		"eslint": "^5.3.0",
 		"eslint-config-airbnb-base": "^13.1.0",
 		"eslint-plugin-import": "^2.16.0",
-		"mocha": "^6.0.2"
+		"mocha": "^6.0.2",
+		"nodemon": "^1.18.10"
 	}
 }
