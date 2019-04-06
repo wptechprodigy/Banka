@@ -1,128 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- <base href="/ui/" /> -->
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Banka - User dashboard</title>
+	</head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <base href="/ui/" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <title>Banka - User dashboard</title>
-</head>
-
-<body>
-  <!-- Main dashboard content starts -->
-  <div class="dashboard-main-style">
-    <section>
-      <div class="dashboard-header">
-        <div class="container header">
-          <div class="brand">
-            <h1><a href="index.html">Banka.</a></h1>
-          </div>
-          <nav>
-            <li><a href="index.html">Sign Out</a></li>
-          </nav>
-        </div>
-      </div>
-    </section>
-    <section class="content">
-      <div class="container">
-        <div class="dashb-contents">
-          <div class="dashb-profile">
-            <img class="marg-tb-pt6" src="./img/Ned_Stark-Sean_Bean.jpg" alt="Nerd Stark" />
-            <h2>Nerd Stark</h2>
-            <hr>
-            <div class="user-details">
-              <table>
-                <tr>
-                  <th colspan="2">Personal Info</th>
-                </tr>
-                <tr>
-                  <td>First Name</td>
-                  <td>Nerd</td>
-                </tr>
-                <tr>
-                  <td>Last Name</td>
-                  <td>Stark</td>
-                </tr>
-                <tr>
-                  <td>email</td>
-                  <td>nerdstark@winterfell.night</td>
-                </tr>
-                <tr>
-                  <td>Address</td>
-                  <td>14 April, Winterfell Lodge, GoT.</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-          <div class="dashb-acc-details">
-            <div class="acc-card">
-              <h3>Account Summary</h3>
-              <div class="summary-listing">
-                <h4>Account No:</h4>
-                <p>0016245465</p>
-              </div>
-              <div class="summary-listing">
-                <h4>Type:</h4>
-                <p>Savings</p>
-              </div>
-              <div class="summary-listing">
-                <h4>Status:</h4>
-                <p>Active</p>
-              </div>
-              <div class="summary-listing">
-                <h4>Balance (NGN):</h4>
-                <p>4,000.00</p>
-              </div>
-            </div>
-            <div class="transac-history u-specific-transaction">
-              <p class="backlink"><a href="./udashboard.html">&larr; Go Back</a></p>
-              <div class="head-btn">
-                <h3 class="marg-tb-pt6">Transaction Details</h3>
-              </div>
-              <div class="acc-card">
-                <div class="summary-listing">
-                  <h4>Account No:</h4>
-                  <p>0016245465</p>
-                </div>
-                <div class="summary-listing">
-                  <h4>Transaction Type:</h4>
-                  <p>Deposit</p>
-                </div>
-                <div class="summary-listing">
-                  <h4>Date:</h4>
-                  <p>23/03/2019</p>
-                </div>
-                <div class="summary-listing">
-                  <h4>Time:</h4>
-                  <p>10:54:46</p>
-                </div>
-                <div class="summary-listing">
-                  <h4>Amount (NGN):</h4>
-                  <p>5,000.00</p>
-                </div>
-                <div class="summary-listing">
-                  <h4>Balance Before (NGN):</h4>
-                  <p>0.00</p>
-                </div>
-                <div class="summary-listing">
-                  <h4>Balance After (NGN):</h4>
-                  <p>5,000.00</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="footer dashboard-footer">
-      <li class="footer-list"><a href="./admin-login.html">Admin</a></li>
-      <li class="footer-list"><a href="./staff-login.html">Staff</a></li>
-      <li class="footer-list">&copy; 2019 Banka.</li>
-    </section>
-  </div>
-</body>
-<script src="./js/app.js"></script>
-
+	<body>
+		<!-- Main dashboard content starts -->
+		<div class="dashboard-main-style">
+			<section>
+				<div class="dashboard-header">
+					<div class="container header">
+						<div class="brand">
+							<h1><a href="./index.html">Banka.</a></h1>
+						</div>
+						<nav>
+							<li><a href="./index.html">Sign Out</a></li>
+						</nav>
+					</div>
+				</div>
+			</section>
+			<section class="content">
+				<div class="container">
+					<div class="dashb-contents">
+						<div class="dashb-profile">
+							<img
+								class="marg-tb-pt6"
+								src="./img/Ned_Stark-Sean_Bean.jpg"
+								alt="Nerd Stark"
+							/>
+							<h2>Nerd Stark</h2>
+							<hr />
+							<div class="user-details">
+								<table>
+									<tr>
+										<th colspan="2">Personal Info</th>
+									</tr>
+									<tr>
+										<td>First Name</td>
+										<td>Nerd</td>
+									</tr>
+									<tr>
+										<td>Last Name</td>
+										<td>Stark</td>
+									</tr>
+									<tr>
+										<td>email</td>
+										<td>nerdstark@winterfell.night</td>
+									</tr>
+									<tr>
+										<td>Address</td>
+										<td>14 April, Winterfell Lodge, GoT.</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div class="dashb-acc-details">
+							<div class="acc-card">
+								<h3>Account Summary</h3>
+								<div class="summary-listing">
+									<h4>Account No:</h4>
+									<p>0016245465</p>
+								</div>
+								<div class="summary-listing">
+									<h4>Type:</h4>
+									<p>Savings</p>
+								</div>
+								<div class="summary-listing">
+									<h4>Status:</h4>
+									<p>Active</p>
+								</div>
+								<div class="summary-listing">
+									<h4>Balance (NGN):</h4>
+									<p>4,000.00</p>
+								</div>
+							</div>
+							<div class="transac-history u-specific-transaction">
+								<p class="backlink">
+									<a href="./udashboard.html">&larr; Go Back</a>
+								</p>
+								<div class="head-btn">
+									<h3 class="marg-tb-pt6">Transaction Details</h3>
+								</div>
+								<div class="acc-card">
+									<div class="summary-listing">
+										<h4>Account No:</h4>
+										<p>0016245465</p>
+									</div>
+									<div class="summary-listing">
+										<h4>Transaction Type:</h4>
+										<p>Deposit</p>
+									</div>
+									<div class="summary-listing">
+										<h4>Date:</h4>
+										<p>23/03/2019</p>
+									</div>
+									<div class="summary-listing">
+										<h4>Time:</h4>
+										<p>10:54:46</p>
+									</div>
+									<div class="summary-listing">
+										<h4>Amount (NGN):</h4>
+										<p>5,000.00</p>
+									</div>
+									<div class="summary-listing">
+										<h4>Balance Before (NGN):</h4>
+										<p>0.00</p>
+									</div>
+									<div class="summary-listing">
+										<h4>Balance After (NGN):</h4>
+										<p>5,000.00</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="footer dashboard-footer">
+				<li class="footer-list"><a href="./admin-login.html">Admin</a></li>
+				<li class="footer-list"><a href="./staff-login.html">Staff</a></li>
+				<li class="footer-list">&copy; 2019 Banka.</li>
+			</section>
+		</div>
+	</body>
+	<script src="./js/app.js"></script>
 </html>

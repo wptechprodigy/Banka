@@ -4,39 +4,39 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <base href="/ui/" />
+		<!-- <base href="/ui/" /> -->
 		<link rel="stylesheet" href="./css/style.css" />
 		<title>Banka - User dashboard</title>
 	</head>
 
 	<body>
-    <!-- create account modal content -->
-    <div id="create-acct-modal" class="create-modal">
-      <div class="create-acct-option">
-        <span class="close-modal">&times;</span>
-        <h3>Select Type of Account</h3>
-        <div class="select-acct-type">
-          <label for="acct-type">Select account type</label>
-          <select name="" id="acct-type">
-            <option value="">Account Type</option>
-            <option value="current">Current</option>
-            <option value="savings">Savings</option>
-          </select>
-          <button type="submit">create</button>
-        </div>
-      </div>
-    </div>
+		<!-- create account modal content -->
+		<div id="create-acct-modal" class="create-modal">
+			<div class="create-acct-option">
+				<span class="close-modal">&times;</span>
+				<h3>Select Type of Account</h3>
+				<div class="select-acct-type">
+					<label for="acct-type">Select account type</label>
+					<select name="" id="acct-type">
+						<option value="">Account Type</option>
+						<option value="current">Current</option>
+						<option value="savings">Savings</option>
+					</select>
+					<button type="submit">create</button>
+				</div>
+			</div>
+		</div>
 
-    <!-- Main dashboard content starts -->
+		<!-- Main dashboard content starts -->
 		<div class="dashboard-main-style">
 			<section>
 				<div class="dashboard-header">
 					<div class="container header">
 						<div class="brand">
-							<h1><a href="index.html">Banka.</a></h1>
+							<h1><a href="./index.html">Banka.</a></h1>
 						</div>
 						<nav>
-							<li><a href="index.html">Sign Out</a></li>
+							<li><a href="./index.html">Sign Out</a></li>
 						</nav>
 					</div>
 				</div>
@@ -55,30 +55,30 @@
 								alt="Nerd Stark"
 							/>
 							<h2>Nerd Stark</h2>
-              <hr>
-              <div class="user-details">
-                <table>
-                    <tr>
-                      <th colspan="2">Personal Info</th>
-                    </tr>
-                    <tr>
-                      <td>First Name</td>
-                      <td>Nerd</td>
-                    </tr>
-                    <tr>
-                      <td>Last Name</td>
-                      <td>Stark</td>
-                    </tr>
-                    <tr>
-                      <td>email</td>
-                      <td>nerdstark@winterfell.night</td>
-                    </tr>
-                    <tr>
-                      <td>Address</td>
-                      <td>14 April, Winterfell Lodge, GoT.</td>
-                    </tr>
-                </table>
-              </div>
+							<hr />
+							<div class="user-details">
+								<table>
+									<tr>
+										<th colspan="2">Personal Info</th>
+									</tr>
+									<tr>
+										<td>First Name</td>
+										<td>Nerd</td>
+									</tr>
+									<tr>
+										<td>Last Name</td>
+										<td>Stark</td>
+									</tr>
+									<tr>
+										<td>email</td>
+										<td>nerdstark@winterfell.night</td>
+									</tr>
+									<tr>
+										<td>Address</td>
+										<td>14 April, Winterfell Lodge, GoT.</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 						<div class="dashb-acc-details">
 							<div class="acc-card">
@@ -91,52 +91,60 @@
 									<h4>Type:</h4>
 									<p>Savings</p>
 								</div>
-                <div class="summary-listing">
-                  <h4>Status:</h4>
-                  <p>Active</p>
-                </div>
+								<div class="summary-listing">
+									<h4>Status:</h4>
+									<p>Active</p>
+								</div>
 								<div class="summary-listing">
 									<h4>Balance (NGN):</h4>
 									<p>4,000.00</p>
 								</div>
 							</div>
-              <div class="transac-history">
-                <div class="head-btn">
-                  <h3 class="marg-tb-pt6">Transaction History</h3>
-                  <!-- create account modal -->
-                  <button class="create-acct">Create an account</button>
-                </div>  
-                <table>
-                  <thead>
-                    <tr>
-                      <th>S/N</th>
-                      <th>Type</th>
-                      <th>Amount</th>
-                      <th>Balance</th>
-                      <th>Date</th>
-                      <th>Details</th>      
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Credit</td>
-                      <td>5,000.00</td>
-                      <td>5,000.00</td>
-                      <td>27/3/2019</td>
-                      <td><a href="./uspecific-transaction.html"><button>View details</button></a></td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Debit</td>
-                      <td>1,000.00</td>
-                      <td>4,000.00</td>
-                      <td>28/3/2019</td>
-                      <td><a href="./uspecific-transaction.html"><button>View details</button></a></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+							<div class="transac-history">
+								<div class="head-btn">
+									<h3 class="marg-tb-pt6">Transaction History</h3>
+									<!-- create account modal -->
+									<button class="create-acct">Create an account</button>
+								</div>
+								<table>
+									<thead>
+										<tr>
+											<th>S/N</th>
+											<th>Type</th>
+											<th>Amount</th>
+											<th>Balance</th>
+											<th>Date</th>
+											<th>Details</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>Credit</td>
+											<td>5,000.00</td>
+											<td>5,000.00</td>
+											<td>27/3/2019</td>
+											<td>
+												<a href="./uspecific-transaction.html"
+													><button>View details</button></a
+												>
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Debit</td>
+											<td>1,000.00</td>
+											<td>4,000.00</td>
+											<td>28/3/2019</td>
+											<td>
+												<a href="./uspecific-transaction.html"
+													><button>View details</button></a
+												>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -149,5 +157,5 @@
 		</div>
 	</body>
 	<script src="./js/app.js"></script>
-  <script src="./js/create-acct-modal.js"></script>
+	<script src="./js/create-acct-modal.js"></script>
 </html>
