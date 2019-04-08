@@ -18,6 +18,7 @@ const UserController = {
     const newUser = UserService.createNewUser(req.body);
     res.status(201).json({
       status: 201,
+      message: 'User created successfully!',
       data: newUser,
     });
   },
@@ -47,6 +48,7 @@ const UserController = {
     const updatedUser = UserService.updateUser(id, req.body);
     res.status(201).json({
       status: 201,
+      message: 'User updated successfully!',
       data: updatedUser,
     });
   },
@@ -59,10 +61,10 @@ const UserController = {
         message: 'User not found',
       });
     }
-    const deletedUser = UserService.deleteUser(id);
+    UserService.deleteUser(id);
     res.status(201).json({
       status: 201,
-      message: `User deleted successfully`,
+      message: 'User deleted successfully',
     });
   },
 };
