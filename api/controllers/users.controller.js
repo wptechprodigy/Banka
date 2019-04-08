@@ -8,14 +8,14 @@ const UserController = {
       data: allUsers,
     });
   },
-  // getOneUserById(req, res) {
-  //     const id = req.params.id;
-  //     const foundUser = UserService.findOneUserById(id);
-  //     res.status(201).json({
-  //         status: 201,
-  //         data: foundUser,
-  //     });
-  // },
+  getOneUserById(req, res) {
+    const id = req.params.id;
+    const foundUser = UserService.findOneUserById(id);
+    res.status(201).json({
+      status: 201,
+      data: foundUser,
+    });
+  },
 };
 
 export default UserController;
