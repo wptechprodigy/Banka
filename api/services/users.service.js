@@ -1,3 +1,5 @@
+import uuid from 'uuid';
+import moment from 'moment';
 import dummyDB from '../utils/dummyDB';
 import User from '../models/users.model';
 
@@ -21,10 +23,11 @@ const UserService = {
   },
   createANewUser(User) {
     User.id = uuid.v4();
+    User.createdOn = moment().format('YYYY-DD-MM');
     dummyDB.users.push(User);
     return User;
   },
-  getAUser(id) {
+  findOneUserById(id) {
     const user = dummyDB.users.find(user => user.id === id);
     return user || {};
   },
@@ -37,7 +40,7 @@ const UserService = {
     users[userDataIndex].email = data.email || user.email;
   },
   deleteAUser(id) {
-    const user = dummyDB.users.find(user => users.id === id);
+    const user = dummyDB.users.find(user => user.id === id);
     const userDataIndex = dummyDB.users.indexOf(user);
     userDataIndex.splice(index, 1);
     return {};
