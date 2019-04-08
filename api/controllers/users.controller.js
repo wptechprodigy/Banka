@@ -38,7 +38,6 @@ const UserController = {
   },
   updateAUser(res, req) {
     const id = req.params.id;
-    console.log(id);
     const foundUser = UserService.findOneUserById(id);
     if (!foundUser) {
       return res.status(404).json({
