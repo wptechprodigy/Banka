@@ -1,4 +1,3 @@
-import morgan from 'morgan';
 import UserService from '../services/users.service';
 
 const UserController = {
@@ -9,7 +8,7 @@ const UserController = {
       data: allUsers,
     });
   },
-  createANewUser(res, req) {
+  createANewUser(req, res) {
     if (!req.body.firstName && !req.body.lastName && !req.body.email && !req.body.password) {
       return res.status(400).json({
         status: 400,
@@ -23,7 +22,7 @@ const UserController = {
     });
   },
   getOneUserById(req, res) {
-    const id = req.params.id;
+    const { id } = req.params;
     const foundUser = UserService.findOneUserById(id);
     if (!foundUser) {
       return res.status(404).json({
@@ -36,9 +35,8 @@ const UserController = {
       data: foundUser,
     });
   },
-  updateAUser(res, req) {
-    const id = req.params.id;
-    console.log(id);
+  updateAUser(req, res) {
+    const { id } = req.params;
     const foundUser = UserService.findOneUserById(id);
     if (!foundUser) {
       return res.status(404).json({
@@ -52,8 +50,8 @@ const UserController = {
       data: updatedUser,
     });
   },
-  deleteAUser(res, req) {
-    const id = req.params.id;
+  deleteAUser(req, res) {
+    const { id } = req.params;
     const foundUser = UserService.findOneUserById(id);
     if (!foundUser) {
       return res.status(404).json({
@@ -64,7 +62,7 @@ const UserController = {
     const deletedUser = UserService.deleteUser(id);
     res.status(201).json({
       status: 201,
-      data: deletedUser,
+      message: `User deleted successfully`,
     });
   },
 };
