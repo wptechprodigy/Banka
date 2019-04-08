@@ -21,7 +21,7 @@ const UserService = {
     });
     return validUser;
   },
-  createANewUser(User) {
+  createNewUser(User) {
     User.id = uuid.v4();
     User.createdOn = moment().format('YYYY-DD-MM');
     dummyDB.users.push(User);
@@ -29,7 +29,7 @@ const UserService = {
   },
   findOneUserById(id) {
     const user = dummyDB.users.find(user => user.id === id);
-    return user || {};
+    return user;
   },
   updateUser(id, data) {
     const user = dummyDB.users.find(user => user.id === id);
@@ -38,11 +38,12 @@ const UserService = {
     users[userDataIndex].address = data.address || user.address;
     users[userDataIndex].lastName = data.lastName || user.lastName;
     users[userDataIndex].email = data.email || user.email;
+    return users[userDataIndex];
   },
-  deleteAUser(id) {
+  deleteUser(id) {
     const user = dummyDB.users.find(user => user.id === id);
     const userDataIndex = dummyDB.users.indexOf(user);
-    userDataIndex.splice(index, 1);
+    dummyDB.users.splice(userDataIndex, 1);
     return {};
   },
 };
