@@ -1,6 +1,12 @@
 import UserService from '../services/users.service';
 
 const UserController = {
+  /**
+	 *
+	 * @param {object} req
+	 * @param {object} res
+	 * @returns {object} user array
+	 */
   getAllUsers(req, res) {
     const allUsers = UserService.findAllUsers();
     res.status(200).json({
@@ -8,6 +14,12 @@ const UserController = {
       data: allUsers,
     });
   },
+  /**
+	 *
+	 * @param {object} req
+	 * @param {object} res
+	 * @returns {object} user object
+	 */
   createANewUser(req, res) {
     if (!req.body.firstName && !req.body.lastName && !req.body.email && !req.body.password) {
       return res.status(400).json({
@@ -22,6 +34,12 @@ const UserController = {
       data: newUser,
     });
   },
+  /**
+	 *
+	 * @param {object} req
+	 * @param {object} res
+	 * @returns {object} user object
+	 */
   getOneUserById(req, res) {
     const { id } = req.params;
     const foundUser = UserService.findOneUserById(id);
@@ -36,6 +54,12 @@ const UserController = {
       data: foundUser,
     });
   },
+  /**
+	 *
+	 * @param {object} req
+	 * @param {object} res
+	 * @returns {object} updated user
+	 */
   updateAUser(req, res) {
     const { id } = req.params;
     const foundUser = UserService.findOneUserById(id);
@@ -52,6 +76,12 @@ const UserController = {
       data: updatedUser,
     });
   },
+  /**
+	 *
+	 * @param {object} req
+	 * @param {object} res
+	 * @returns {void} returns status code 204
+	 */
   deleteAUser(req, res) {
     const { id } = req.params;
     const foundUser = UserService.findOneUserById(id);
@@ -62,8 +92,8 @@ const UserController = {
       });
     }
     UserService.deleteUser(id);
-    res.status(201).json({
-      status: 201,
+    res.status(204).json({
+      status: 204,
       message: 'User deleted successfully',
     });
   },

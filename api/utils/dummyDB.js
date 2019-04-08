@@ -1,6 +1,7 @@
 import uuid from 'uuid';
 import moment from 'moment';
 
+/** Generate account number function */
 const generateAccountNumber = () => (accountNumber = Math.floor(Math.random() * 10000000000));
 
 export default {
