@@ -1,7 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
-import UserController from './controllers/users.controller';
 import userRoutes from './routes/users.route';
 
 const app = express();
