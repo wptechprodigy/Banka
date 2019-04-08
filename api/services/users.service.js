@@ -1,0 +1,47 @@
+import dummyDB from '../utils/dummyDB';
+import User from '../models/users.model';
+
+const UserService = {
+  findAllUsers() {
+    const validUser = dummyDB.users.map((user) => {
+      const newUser = new User();
+      newUser.id = user.id;
+      newUser.firstName = user.firstName;
+      newUser.lastName = user.lastName;
+      newUser.email = user.email;
+      newUser.password = user.password;
+      newUser.phoneNumber = user.phoneNumber;
+      newUser.address = user.address;
+      newUser.type = user.type;
+      newUser.createdOn = user.createdOn;
+      newUser.isAdmin = user.isAdmin;
+      return newUser;
+    });
+    return validUser;
+  },
+  createANewUser(User) {
+    User.id = uuid.v4();
+    dummyDB.users.push(User);
+    return User;
+  },
+  getAUser(id) {
+    const user = dummyDB.users.find(user => user.id === id);
+    return user || {};
+  },
+  updateUser(id, data) {
+    const user = dummyDB.users.find(user => user.id === id);
+    const userDataIndex = dummyDB.users.indexOf(user);
+    users[userDataIndex].phoneNumber = data.phoneNumber || user.phoneNumber;
+    users[userDataIndex].address = data.address || user.address;
+    users[userDataIndex].lastName = data.lastName || user.lastName;
+    users[userDataIndex].email = data.email || user.email;
+  },
+  deleteAUser(id) {
+    const user = dummyDB.users.find(user => users.id === id);
+    const userDataIndex = dummyDB.users.indexOf(user);
+    userDataIndex.splice(index, 1);
+    return {};
+  },
+};
+
+export default UserService;
