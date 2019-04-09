@@ -1,4 +1,8 @@
 class User {
+  /**
+	 * @class constructor
+	 * @param {object} data
+	 */
   constructor() {
     this.id = null;
     this.firstName = null;
