@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start-dev": "nodemon --exec babel-node api/index.js",
-		"test": "./node_modules/.bin/mocha --require @babel/register test/*.js --exit",
+		"test": "./node_modules/.bin/mocha --require @babel/register test/*.js --exit --watch",
 		"deploy": "gh-pages -d ui"
 	},
 	"repository": {

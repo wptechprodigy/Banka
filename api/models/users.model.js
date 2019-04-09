@@ -1,5 +1,6 @@
 class User {
   /**
+   *
 	 * @class constructor
 	 * @param {object} data
 	 */
