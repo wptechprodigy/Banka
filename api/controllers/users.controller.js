@@ -54,10 +54,6 @@ const UserController = {
       data: foundUser,
     });
   },
-<<<<<<< HEAD
-  updateAUser(res, req) {
-    const id = req.params.id;
-=======
   /**
 	 *
 	 * @param {object} req
@@ -66,7 +62,6 @@ const UserController = {
 	 */
   updateAUser(req, res) {
     const { id } = req.params;
->>>>>>> 738b6a416af0760580b4e4b115cc806416315137
     const foundUser = UserService.findOneUserById(id);
     if (!foundUser) {
       return res.status(404).json({

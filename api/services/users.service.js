@@ -9,6 +9,11 @@ const UserService = {
 	 * @returns {object} returns all users
 	 */
   findAllUsers() {
+    // const allUser = dummyDB.users.map((user) => {
+    //   const { password, ...userWithoutPassword } = user;
+    //   return userWithoutPassword;
+    // });
+    // return allUser;
     const validUser = dummyDB.users.map((user) => {
       const newUser = new User();
       newUser.id = user.id;

@@ -4,7 +4,15 @@ import moment from 'moment';
 /** Generate account number function */
 const generateAccountNumber = () => (accountNumber = Math.floor(Math.random() * 10000000000));
 
+/**
+ *
+ * @template sample db data
+ *
+ */
 export default {
+  /**
+	 * @template sample user data
+	 */
   users: [
     {
       id: uuid.v4(),
@@ -69,6 +77,27 @@ export default {
       },
       createdOn: moment().format('YYYY DD MM'),
       isAdmin: true,
+    },
+  ],
+  /**
+	 * @template account info
+	 */
+  accounts: [
+    {
+      id: uuid.v4(),
+      accountNumber: generateAccountNumber(),
+      createdOn: moment().format('YYYY DD MM'),
+      type: 'savings',
+      status: 'active',
+      balance: '500000.00',
+    },
+    {
+      id: uuid.v4(),
+      accountNumber: generateAccountNumber(),
+      createdOn: moment().format('YYYY DD MM'),
+      type: 'current',
+      status: 'active',
+      balance: '5000000.00',
     },
   ],
 };
