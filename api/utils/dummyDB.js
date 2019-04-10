@@ -27,7 +27,7 @@ export default {
         city: 'Tampa',
         state: 'Florida',
       },
-      createdOn: moment().format('YYYY DD MM'),
+      createdOn: moment().format(),
       isAdmin: false,
     },
     {
@@ -43,7 +43,7 @@ export default {
         city: 'Agidingbi',
         state: 'Lagos',
       },
-      createdOn: moment().format('YYYY DD MM'),
+      createdOn: moment().format(),
       isAdmin: false,
     },
     {
@@ -59,7 +59,7 @@ export default {
         city: 'Ilupeju',
         state: 'Lagos',
       },
-      createdOn: moment().format('YYYY DD MM'),
+      createdOn: moment().format(),
       isAdmin: false,
     },
     {
@@ -75,7 +75,7 @@ export default {
         city: 'Idimu',
         state: 'Lagos',
       },
-      createdOn: moment().format('YYYY DD MM'),
+      createdOn: moment().format(),
       isAdmin: true,
     },
   ],
@@ -86,7 +86,7 @@ export default {
     {
       id: uuid.v4(),
       accountNumber: generateAccountNumber(),
-      createdOn: moment().format('YYYY DD MM'),
+      createdOn: moment().format(),
       type: 'savings',
       status: 'active',
       balance: '500000.00',
@@ -94,7 +94,7 @@ export default {
     {
       id: uuid.v4(),
       accountNumber: generateAccountNumber(),
-      createdOn: moment().format('YYYY DD MM'),
+      createdOn: moment().format(),
       type: 'current',
       status: 'active',
       balance: '5000000.00',
