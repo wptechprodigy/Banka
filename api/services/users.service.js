@@ -1,7 +1,6 @@
 import uuid from 'uuid';
 import moment from 'moment';
 import dummyDB from '../utils/dummyDB';
-import User from '../models/users.model';
 
 const UserService = {
   /**
@@ -9,21 +8,11 @@ const UserService = {
 	 * @returns {object} returns all users
 	 */
   findAllUsers() {
-    const validUser = dummyDB.users.map((user) => {
-      const newUser = new User();
-      newUser.id = user.id;
-      newUser.firstName = user.firstName;
-      newUser.lastName = user.lastName;
-      newUser.email = user.email;
-      newUser.password = user.password;
-      newUser.phoneNumber = user.phoneNumber;
-      newUser.address = user.address;
-      newUser.type = user.type;
-      newUser.createdOn = user.createdOn;
-      newUser.isAdmin = user.isAdmin;
-      return newUser;
+    const allUser = dummyDB.users.map((user) => {
+      const { password, ...userWithoutPassword } = user;
+      return userWithoutPassword;
     });
-    return validUser;
+    return allUser;
   },
   /**
 	 * @param {object} user object
@@ -31,7 +20,7 @@ const UserService = {
 	 */
   createNewUser(user) {
     user.id = uuid.v4();
-    user.createdOn = moment().format('YYYY-DD-MM');
+    user.createdOn = moment().format();
     dummyDB.users.push(user);
     return user;
   },
