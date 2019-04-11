@@ -1,6 +1,7 @@
 import uuid from 'uuid';
 import moment from 'moment';
 import dummyDB from '../utils/dummyDB';
+import generateAccountNumber from '../Middleware/account-gen';
 
 /**
  * @AccountService
@@ -13,12 +14,43 @@ const AccountService = {
 	 *
 	 * @returns {object} new user object
 	 */
-  createNewAccount(account, userId) {
+  createNewAccount(data, userId) {
     const userCreatingAccountId = dummyDB.users.map(user => user.id === userId);
-    account.id = uuid.v4();
-    account.createdOn = moment().format();
-    account.owner = userCreatingAccountId;
-    dummyDB.accounts.push(account);
+    const { firstName, lastName, email } = userCreatingAccountId;
+    const newAccount = {
+      id: uuid.v4(),
+      firstName,
+      lastName,
+      email,
+      type: data.type,
+      status: 'draft',
+      createdOn: moment().format(),
+      accountNumber: String(generateAccountNumber()),
+      owner: userCreatingAccountId.id,
+      openingBalance: '00.00' * 1,
+    };
+    dummyDB.accounts.push(newAccount);
+    return newAccount;
+  },
+  /**
+	 *
+	 * @returns {object} returns all accounts
+	 */
+  getAllAccount() {
+    const allAccount = dummyDB.accounts.map((account) => {
+      const { id, ...accountWithoutId } = account;
+      return accountWithoutId;
+    });
+    return allAccount;
+  },
+  /**
+	 *
+	 * @param {string} accountNumber
+	 *
+	 * @returns {object} account object
+	 */
+  getAnAccount(accountNumber) {
+    const account = dummyDB.accounts.find(account => account.accountNumber === accountNumber);
     return account;
   },
   /**
