@@ -70,6 +70,35 @@ const UserController = {
 	 *
 	 * @param {object} req
 	 * @param {object} res
+	 *
+	 * @returns {object} user object
+	 */
+  signIn(req, res) {
+    if (!req.body.email) {
+      throw 'Email is required';
+    } else if (!req.body.password) {
+      throw 'Password is required';
+    }
+    // check it email is unique
+    const { email, password } = req.body;
+    const checkEmail = dummyDB.users.find(user => user.email === email);
+    if (checkEmail.email !== email) {
+      throw 'Email is not known';
+    }
+    if (checkEmail.password !== password) {
+      throw 'Password does not match';
+    }
+    const userData = UserService.logUserIn(req.body);
+    res.status(200).json({
+      status: 200,
+      data: userData,
+    });
+  },
+
+  /**
+	 *
+	 * @param {object} req
+	 * @param {object} res
 	 * @returns {object} updated user
 	 */
   updateAUser(req, res) {

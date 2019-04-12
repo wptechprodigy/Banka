@@ -32,14 +32,13 @@ const UserService = {
       type: 'Client',
       isAdmin: false,
       createdOn: moment().format(),
-      role: 'Client',
     };
     const token = jwt.sign(
       {
         sub: user.id,
         email: user.email,
         isAdmin: user.isAdmin,
-        role: user.role,
+        role: user.type,
       },
       secret,
     );
@@ -50,6 +49,30 @@ const UserService = {
     return {
       token,
       ...userData,
+    };
+  },
+  /**
+	 * @param {object} req.body from  signup controller object
+	 *
+	 * @returns {object} new user object
+	 */
+  logUserIn(data) {
+    const inComingUser = dummyDB.users.find(user => user.email === data.email);
+    const token = jwt.sign(
+      {
+        sub: inComingUser.id,
+        email: inComingUser.email,
+        isAdmin: inComingUser.isAdmin,
+        role: inComingUser.type,
+      },
+      secret,
+    );
+    return {
+      token,
+      id: inComingUser.id,
+      firstName: inComingUser.firstName,
+      lastName: inComingUser.lastName,
+      email: inComingUser.email,
     };
   },
   /**
