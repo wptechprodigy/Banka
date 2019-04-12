@@ -1,5 +1,7 @@
 import uuid from 'uuid';
 import moment from 'moment';
+import jwt from 'jsonwebtoken';
+import secret from '../utils/jwt_secret';
 import dummyDB from '../utils/dummyDB';
 
 const UserService = {
@@ -15,14 +17,40 @@ const UserService = {
     return allUser;
   },
   /**
-	 * @param {object} user object
+	 * @param {object} req.body from  signup controller object
+	 *
 	 * @returns {object} new user object
 	 */
   createNewUser(user) {
-    user.id = uuid.v4();
-    user.createdOn = moment().format();
-    dummyDB.users.push(user);
-    return user;
+    const newUser = {
+      id: uuid.v4(),
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      password: user.password,
+      confirmPassword: user.confirmPassword,
+      type: 'Client',
+      isAdmin: false,
+      createdOn: moment().format(),
+      role: 'Client',
+    };
+    const token = jwt.sign(
+      {
+        sub: user.id,
+        email: user.email,
+        isAdmin: user.isAdmin,
+        role: user.role,
+      },
+      secret,
+    );
+    const {
+      password, confirmPassword, isAdmin, type, role, createdOn, ...userData
+    } = newUser;
+    dummyDB.users.push(newUser);
+    return {
+      token,
+      ...userData,
+    };
   },
   /**
 	 *
