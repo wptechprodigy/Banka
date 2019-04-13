@@ -1,9 +1,11 @@
 import { Router } from 'express';
+import authorizeRole from '../Middleware/authorize-role';
+import Role from '../Middleware/role';
 import AccountController from '../controllers/accounts.controller';
 
 const router = Router();
 
-router.post('/', AccountController.createANewAccount);
+router.post('/', authorizeRole(Role.Client), AccountController.createANewAccount);
 router.get('/', AccountController.getAllAccounts);
 router.delete('/:accountNumber', AccountController.deleteAnAccount);
 router.get('/:accountNumber', AccountController.getAnAccountDetails);

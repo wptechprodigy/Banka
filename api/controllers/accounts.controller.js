@@ -12,9 +12,9 @@ const AccountController = {
 	 *
 	 * @returns {object} account object
 	 */
-  createANewAccount(req, res) {
-    const { userId } = req.params.id;
-    const newAccount = AccountService.createNewAccount(req.body, userId);
+  createANewAccount(req, res, next) {
+    const currentUser = req.user;
+    const newAccount = AccountService.createNewAccount(req.body, currentUser);
     res.status(201).json({
       status: 201,
       data: newAccount,
@@ -29,6 +29,21 @@ const AccountController = {
 	 */
   getAnAccountDetails(req, res) {
     const desiredAccount = AccountService.getAnAccount(req.params.accountNumber);
+    res.status(200).json({
+      status: 200,
+      data: desiredAccount,
+    });
+  },
+  /**
+	 *
+	 * @param {object} req
+	 * @param {object} res
+	 *
+	 * @returns {object}
+	 */
+  patchAnAccount(req, res) {
+    const currentUser = req.user;
+    const desiredAccount = AccountService.patchAccount(req.params, currentUser);
     res.status(200).json({
       status: 200,
       data: desiredAccount,
