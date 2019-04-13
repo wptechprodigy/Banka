@@ -48,7 +48,7 @@ export default {
       lastName: 'Targaeryean',
       email: 'd.targaeryean@targearyean.got',
       password: '123456',
-      type: 'staff',
+      type: 'Staff',
       phoneNumber: '08123676589',
       address: {
         street: '122 Westeros Ave.',
@@ -64,7 +64,7 @@ export default {
       lastName: 'Lannister',
       email: 'jamielannister@lannisters.got',
       password: '123456',
-      type: 'staff',
+      type: 'Admin',
       phoneNumber: '08053676589',
       address: {
         street: '122 King Slayer Ave.',
