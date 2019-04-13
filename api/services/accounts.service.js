@@ -1,6 +1,6 @@
-import uuid from 'uuid';
 import moment from 'moment';
 import dummyDB from '../utils/dummyDB';
+import Role from '../Middleware/role';
 import generateAccountNumber from '../Middleware/account-gen';
 
 /**
@@ -69,10 +69,23 @@ const AccountService = {
 	 *
 	 * @returns {object} account object
 	 */
-  patchAccount(data, currentUser) {
-    const account = dummyDB.accounts.find(account => account.accountNumber === data.accountNumber);
+  patchAccount(newStatusInfo, data, currentUser) {
+    const accountToPatch = String(data.accountNumber);
+    const account = dummyDB.accounts.find(account => account.accountNumber === accountToPatch);
+    const userWithRole = dummyDB.users.find(user => user.id === currentUser.sub);
 
-    return account;
+    // only allow Admin and Staff to access access
+    if (userWithRole.id === currentUser.sub && currentUser.role !== Role.Admin) {
+      throw 'Unauthorized';
+    }
+
+    const accountIndex = dummyDB.accounts.indexOf(account);
+    dummyDB.accounts[accountIndex].status = newStatusInfo.status;
+    const newAccountStatus = dummyDB.accounts[accountIndex].status;
+    return {
+      accountNumber: account.accountNumber,
+      status: newAccountStatus,
+    };
   },
   /**
 	 *

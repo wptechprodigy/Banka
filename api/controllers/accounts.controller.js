@@ -43,7 +43,11 @@ const AccountController = {
 	 */
   patchAnAccount(req, res) {
     const currentUser = req.user;
-    const desiredAccount = AccountService.patchAccount(req.params, currentUser);
+    const { accountNumber } = req.params;
+    if (!accountNumber) {
+      throw 'Account not found';
+    }
+    const desiredAccount = AccountService.patchAccount(req.body, req.params, currentUser);
     res.status(200).json({
       status: 200,
       data: desiredAccount,
