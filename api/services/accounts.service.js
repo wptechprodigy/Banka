@@ -14,23 +14,33 @@ const AccountService = {
 	 *
 	 * @returns {object} new user object
 	 */
-  createNewAccount(data, userId) {
-    const userCreatingAccountId = dummyDB.users.map(user => user.id === userId);
-    const { firstName, lastName, email } = userCreatingAccountId;
+  createNewAccount(data, currentUser) {
+    const userCreatingAccountId = dummyDB.users.find(user => user.id === currentUser.sub);
+
+    // only allow user with access
+    if (userCreatingAccountId.id !== currentUser.sub) {
+      throw 'Unauthorized';
+    }
+
+    // Define new acccount
     const newAccount = {
-      id: uuid.v4(),
-      firstName,
-      lastName,
-      email,
-      type: data.type,
-      status: 'draft',
+      id: userCreatingAccountId.id,
+      firstName: userCreatingAccountId.firstName,
+      lastName: userCreatingAccountId.lastName,
+      email: userCreatingAccountId.email,
+      type: userCreatingAccountId.type,
       createdOn: moment().format(),
       accountNumber: String(generateAccountNumber()),
       owner: userCreatingAccountId.id,
-      openingBalance: '00.00' * 1,
+      balance: '00.00' * 1,
     };
+    const {
+      id, status, owner, balance, ...withoutIdStatusOwner
+    } = newAccount;
     dummyDB.accounts.push(newAccount);
-    return newAccount;
+    return {
+      ...withoutIdStatusOwner,
+    };
   },
   /**
 	 *
@@ -51,6 +61,17 @@ const AccountService = {
 	 */
   getAnAccount(accountNumber) {
     const account = dummyDB.accounts.find(account => account.accountNumber === accountNumber);
+    return account;
+  },
+  /**
+	 *
+	 * @param {string} accountNumber
+	 *
+	 * @returns {object} account object
+	 */
+  patchAccount(data, currentUser) {
+    const account = dummyDB.accounts.find(account => account.accountNumber === data.accountNumber);
+
     return account;
   },
   /**
