@@ -11,8 +11,12 @@ router.patch(
   authorizeRole([Role.Admin, Role.Staff]),
   AccountController.patchAnAccount,
 );
-router.get('/accounts', AccountController.getAllAccounts);
-router.delete('/:accountNumber', AccountController.deleteAnAccount);
-router.get('/:accountNumber', AccountController.getAnAccountDetails);
+router.delete(
+  '/:accountNumber',
+  authorizeRole([Role.Admin, Role.Staff]),
+  AccountController.deleteAnAccount,
+);
+router.get('/accounts', authorizeRole([Role.Admin, Role.Staff]), AccountController.getAllAccounts);
+router.get('/:accountNumber', authorizeRole(), AccountController.getAnAccountDetails);
 
 export default router;
