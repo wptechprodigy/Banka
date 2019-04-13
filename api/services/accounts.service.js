@@ -104,11 +104,22 @@ const AccountService = {
 	 *
 	 * @param {string} accountNumber
 	 */
-  deleteAccount(accountNumber) {
-    const account = dummyDB.accounts.map(account => account.accountNumber === accountNumber);
+  deleteAccount(accountNumber, currentUser) {
+    const accountToDelete = String(accountNumber);
+    const account = dummyDB.accounts.find(account => account.accountNumber === accountToDelete);
+    const userWithRole = dummyDB.users.find(user => user.id === currentUser.sub);
     const accountIndex = dummyDB.accounts.indexOf(account);
+
+    // only allow Admin and Staff to access access
+    if (userWithRole.id === currentUser.sub && currentUser.role !== Role.Admin) {
+      throw 'Unauthorized';
+    }
+
     dummyDB.accounts.splice(accountIndex, 1);
-    return {};
+    return {
+      status: 204,
+      message: 'Account successfully deleted',
+    };
   },
 };
 

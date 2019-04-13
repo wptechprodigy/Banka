@@ -75,18 +75,21 @@ const AccountController = {
 	 * @returns {void} returns status code 204
 	 */
   deleteAnAccount(req, res) {
+    const currentUser = req.user;
     const { accountNumber } = req.params;
+    if (!accountNumber) {
+      throw 'Account not found';
+    }
     const foundAccount = AccountService.getAnAccount(accountNumber);
     if (!foundAccount) {
       return res.status(404).json({
         status: 404,
-        message: 'User not found',
+        message: 'Account not found',
       });
     }
-    AccountService.deleteAccount(accountNumber);
-    res.status(204).json({
-      status: 204,
-      message: 'User deleted successfully',
+    const deleteMessage = AccountService.deleteAccount(accountNumber, currentUser);
+    res.status(200).json({
+      deleteMessage,
     });
   },
 };
