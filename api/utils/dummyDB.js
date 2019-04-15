@@ -1,4 +1,5 @@
 import moment from 'moment';
+import uuid from 'uuid';
 
 /**
  *
@@ -86,7 +87,7 @@ export default {
       owner: '053d71de-707a-4a16-945d-a5255245d64a',
       type: 'savings',
       status: 'active',
-      balance: '500000.00',
+      balance: 300000.00,
     },
     {
       id: '0d4b64b4-c632-497e-b22a-8a6e7694c637',
@@ -95,7 +96,29 @@ export default {
       owner: 'fa77a5a0-d7ac-4870-a7cc-6c7a7df93d5b',
       type: 'current',
       status: 'active',
-      balance: '5000000.00',
+      balance: 300000.00,
+    },
+  ],
+  transactions: [
+    {
+      id: 1,
+      createdOn: moment().format(),
+      transactionType: 'credit',
+      accountNumber: '5789761524',
+      cashier: '209d3dcc-590a-49aa-804e-b0715747252b',
+      amount: 300000.00,
+      oldBalance: 5000000.00,
+      newBalance: 5300000.00,
+    },
+    {
+      id: 2,
+      createdOn: moment().format(),
+      transactionType: 'debit',
+      accountNumber: '430287547',
+      cashier: '209d3dcc-590a-49aa-804e-b0715747252b',
+      amount: 200000.00,
+      oldBalance: 500000.00,
+      newBalance: 300000.00,
     },
   ],
 };

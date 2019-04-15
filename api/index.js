@@ -4,6 +4,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import userRoutes from './routes/users.route';
 import accountRoutes from './routes/accounts.route';
+import transactionRoutes from './routes/transactions.route';
 import errorHandler from './Middleware/error-handler';
 
 // Initializing express and declaring port
@@ -26,6 +27,7 @@ const API_BASE_URL = '/api/v1';
 // Defining all routes
 app.use(`${API_BASE_URL}`, userRoutes);
 app.use(`${API_BASE_URL}/accounts`, accountRoutes);
+app.use(`${API_BASE_URL}/transactions`, transactionRoutes);
 
 app.get('/', (req, res) => {
   res.status(200).json({
