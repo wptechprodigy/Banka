@@ -87,7 +87,7 @@ export default {
       owner: '053d71de-707a-4a16-945d-a5255245d64a',
       type: 'savings',
       status: 'active',
-      balance: 300000.00,
+      balance: parseFloat(300000.0).toFixed(2),
     },
     {
       id: '0d4b64b4-c632-497e-b22a-8a6e7694c637',
@@ -96,7 +96,7 @@ export default {
       owner: 'fa77a5a0-d7ac-4870-a7cc-6c7a7df93d5b',
       type: 'current',
       status: 'active',
-      balance: 300000.00,
+      balance: parseFloat(300000.0).toFixed(2),
     },
   ],
   transactions: [
@@ -106,9 +106,9 @@ export default {
       transactionType: 'credit',
       accountNumber: '5789761524',
       cashier: '209d3dcc-590a-49aa-804e-b0715747252b',
-      amount: 300000.00,
-      oldBalance: 5000000.00,
-      newBalance: 5300000.00,
+      amount: 300000.0,
+      oldBalance: 5000000.0,
+      newBalance: 5300000.0,
     },
     {
       id: 2,
@@ -116,9 +116,9 @@ export default {
       transactionType: 'debit',
       accountNumber: '430287547',
       cashier: '209d3dcc-590a-49aa-804e-b0715747252b',
-      amount: 200000.00,
-      oldBalance: 500000.00,
-      newBalance: 300000.00,
+      amount: 200000.0,
+      oldBalance: 500000.0,
+      newBalance: 300000.0,
     },
   ],
 };
