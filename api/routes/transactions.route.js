@@ -10,15 +10,10 @@ router.post(
   authorizeRole(Role.Staff),
   TransactionController.debitAnAccount,
 );
-router.get(
-  '/',
-  authorizeRole([Role.Admin, Role.Staff]),
-  TransactionController.retrieveAllTransactions,
+router.post(
+  '/:accountNumber/credit',
+  authorizeRole(Role.Staff),
+  TransactionController.creditAnAccount,
 );
-// router.post(
-//   '/:accountNumber/credit',
-//   authorizeRole(Role.Staff),
-//   TransactionController.creditAnAccount,
-// );
 
 export default router;
