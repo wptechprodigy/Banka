@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<!-- <base href="/ui/" /> -->
 		<link rel="stylesheet" href="./css/style.css" />
-		<title>Banka - Sign-up</title>
+		<title>Banka - User login</title>
 	</head>
 
 	<body>
@@ -24,27 +24,6 @@
 				<section class="form-area">
 					<form action="./udashboard.html" method="get">
 						<div class="pad-pt5 flex-wrap">
-							<label for="firstName">First Name</label>
-							<input
-								type="text"
-								name="firstName"
-								id="firstName"
-								placeholder="First name"
-								required
-								autofocus
-							/>
-						</div>
-						<div class="pad-pt5 flex-wrap">
-							<label for="lastName">Last Name</label>
-							<input
-								type="text"
-								name="lastName"
-								id="lastName"
-								placeholder="Last name"
-								required
-							/>
-						</div>
-						<div class="pad-pt5 flex-wrap">
 							<label for="email">Email</label>
 							<input
 								type="email"
@@ -52,6 +31,7 @@
 								id="email"
 								placeholder="Email addess..."
 								required
+								autofocus
 							/>
 						</div>
 						<div class="pad-pt5 flex-wrap">
@@ -64,22 +44,17 @@
 								required
 							/>
 						</div>
-						<div class="pad-pt5 flex-wrap">
-							<label for="conf-password">Confirm Password</label>
-							<input
-								type="password"
-								name="conf-password"
-								id="conf-password"
-								placeholder="Confirm password..."
-								required
-							/>
+						<div class="forgot-password">
+							<p>
+								<a href="./password-reset">Forgot password?</a>
+							</p>
 						</div>
 						<div class="form-submit">
-							<input type="submit" value="Sign-up!" />
+							<input type="submit" value="Sign-in!" />
 						</div>
 					</form>
 					<div class="already-done">
-						<p>Registered Already? <a href="./login.html">Login</a></p>
+						<p>Yet to register? <a href="./sign-up.html">Sign-up</a></p>
 					</div>
 				</section>
 			</section>
