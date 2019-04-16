@@ -10,9 +10,8 @@
 	--fira-family: 'Fira Sans', sans-serif;
 	--Merriweather-family: 'Merriweather', serif;
 	--dark: #4f2d7f;
-	--darker: #201136;
 	--light: #9d5bff;
-	--rusty-red: #d4cf3c;
+	--rusty-red: #d7263d;
 	--x-light: #d2b5ff;
 	--june-bud: #c5d86d;
 	--font-color: #252525;
@@ -25,10 +24,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
-
-*:focus {
-	outline: var(--dark);
 }
 
 body {
@@ -78,9 +73,9 @@ h1 {
 	color: var(--x-light);
 }
 
-/* input {
+input {
 	padding: 0.3rem;
-} */
+}
 
 .container {
 	width: 90%;
@@ -152,47 +147,8 @@ h1 {
 	transition: all 0.5s ease-in-out;
 }
 
-.header nav li:last-child a:hover {
+.header nav li a:hover {
 	border-bottom: 2px solid var(--june-bud);
-}
-
-/* Dropdown login */
-
-li.login-dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-logins {
-	display: none;
-	position: absolute;
-	background-color: var(--x-light);
-	min-width: 9rem;
-	-webkit-box-shadow: 5px 5px 10px 5px rgba(79, 45, 127, 1);
-	-moz-box-shadow: 5px 5px 10px 5px rgba(79, 45, 127, 1);
-	box-shadow: 5px 5px 10px 5px rgba(79, 45, 127, 1);
-	z-index: 1;
-	transition: all 500ms ease-in-out;
-}
-
-li.login-dropdown .dropdown-logins a {
-	color: var(--dark);
-	padding: 0.8rem 1rem 0.8rem 0.1rem;
-	text-decoration: none;
-	display: block;
-	transition: all 500ms ease-in-out;
-}
-
-.dropdown-logins a:hover {
-	background-color: var(--x-light);
-}
-
-li.login-dropdown:hover .dropdown-logins {
-	display: block;
-}
-
-li.login-dropdown:hover .dropdown-link {
-	background-color: var(--light);
 }
 
 .dashboard-header {
@@ -201,7 +157,7 @@ li.login-dropdown:hover .dropdown-link {
 }
 
 .brand-heading {
-	margin: 2% auto 0 auto;
+	margin: 8% auto 0 auto;
 	font-size: 4rem;
 	color: var(--june-bud);
 }
@@ -221,40 +177,16 @@ h3.sub-brand-heading {
 	display: flex;
 	order: 2;
 	flex-grow: 1;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	/* margin: 18% auto; */
 	text-align: center;
 }
 
-.content .content_home {
-	display: flex;
-	flex-direction: column;
-}
-
 .content h1 {
 	font-size: 2.5em;
 	margin-bottom: 20px;
-}
-
-.content .left-dashboard {
-	flex: 1.5;
-	background-color: var(--darker);
-	padding: 20px;
-	order: 1;
-}
-
-.content .right-dashboard {
-	flex: 8.5;
-	background-color: var(--x-light);
-	padding: 20px;
-	order: 2;
-}
-
-.content .left-dashboard,
-.content .right-dashboard {
-	height: calc(100vh - 6.3125rem);
 }
 
 button.get-started {
@@ -267,7 +199,7 @@ button.get-started {
 button.get-started a {
 	font: var(--fira-family);
 	font-size: 1.3rem;
-	color: var(--darker);
+	color: var(--x-light);
 	font-weight: 500;
 }
 
@@ -283,22 +215,18 @@ button.get-started a {
 }
 
 form {
-	margin-top: 20px;
 	background-color: var(--x-light);
-	padding: 3rem;
+	padding: 1.5rem 0.625rem;
 	border-radius: 5px;
-	min-width: 250px;
-	min-height: auto;
-	-webkit-box-shadow: 1px 1px 3px 2px rgba(79, 45, 127, 1);
-	-moz-box-shadow: 1px 1px 3px 2px rgba(79, 45, 127, 1);
-	box-shadow: 1px 1px 3px 2px rgba(79, 45, 127, 1);
+	min-width: 150px;
+	-webkit-box-shadow: 5px 5px 10px 5px rgba(79, 45, 127, 1);
+	-moz-box-shadow: 5px 5px 10px 5px rgba(79, 45, 127, 1);
+	box-shadow: 5px 5px 10px 5px rgba(79, 45, 127, 1);
 }
 
 input {
-	border-radius: 3px;
 	padding: 0.3rem 0.5rem;
 	border: none;
-	margin-left: 10px;
 	line-height: 1.3rem;
 	border-bottom: 2px solid var(--dark);
 }
@@ -316,8 +244,7 @@ input {
 
 .flex-wrap label {
 	width: 110px;
-	margin-right: 5px;
-	text-align: right;
+	margin-right: 0;
 }
 
 .full-name {
@@ -333,18 +260,18 @@ input {
 }
 
 .forgot-password p a {
-	color: var(--darker);
+	color: var(--rusty-red);
 }
 
 .already-done > p {
 	margin: 0.625rem auto;
 	font-size: 0.7rem;
+	color: var(--june-bud);
 	opacity: 0.7;
 }
 
-.already-done > p,
 .already-done p a {
-	color: var(--light);
+	color: var(--june-bud);
 }
 
 .form-submit {
@@ -359,15 +286,14 @@ input {
 	font-size: 1rem;
 	background-color: var(--dark);
 	color: var(--x-light);
-	flex-grow: 0.6;
-	margin-right: 0.412rem;
+	flex-grow: 0.8;
+	margin-right: 0.3125rem;
 	border-radius: 0.3125rem;
 	transition: all 500ms ease-in-out;
 }
 
 .form-submit input[type='submit']:hover {
 	background-color: var(--rusty-red);
-	color: var(--dark);
 	transform: scale(1.01);
 	cursor: pointer;
 }
@@ -741,7 +667,6 @@ h4.marg-l-pt6 {
 	order: 99;
 	justify-content: center;
 	font-size: 0.7rem;
-	height: 3.5rem;
 	/* padding-bottom: 0.625rem; */
 	align-items: center;
 	line-height: 1.875rem;
