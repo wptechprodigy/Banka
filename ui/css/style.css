@@ -97,7 +97,7 @@ h1 {
 
 .marg-tb-pt6 {
 	/* marg-tb = margin top and bottom */
-	margin-top: 1rem;
+	margin-top: 0.625rem;
 	margin-bottom: 0.625rem;
 }
 
@@ -224,7 +224,6 @@ h3.sub-brand-heading {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	/* margin: 18% auto; */
 	text-align: center;
 }
 
@@ -241,7 +240,6 @@ h3.sub-brand-heading {
 .content .left-dashboard {
 	flex: 1.5;
 	background-color: var(--darker);
-	padding: 20px;
 	order: 1;
 }
 
@@ -255,6 +253,7 @@ h3.sub-brand-heading {
 .content .left-dashboard,
 .content .right-dashboard {
 	height: calc(100vh - 6.3125rem);
+	overflow: auto;
 }
 
 button.get-started {
@@ -403,6 +402,119 @@ input {
 	box-shadow: 0 0 3px 1px rgba(79, 45, 127, 0.7);
 }
 
+/* profile column */
+.profile-identity {
+	display: flex;
+	align-items: center;
+	background-color: var(--light);
+}
+.profile-identity img {
+	width: 40%;
+	border-radius: 50%;
+	margin-left: 0.625rem;
+	border: 2px solid var(--dark);
+	box-shadow: 0 0 3px 1px rgba(79, 45, 127, 0.7);
+}
+
+.profile-identity h4 {
+	font-size: 0.8rem;
+	margin-left: 0.8rem;
+}
+
+@media (max-width: 48em) {
+	.profile-identity h4 {
+		display: none;
+	}
+
+	.profile-identity img {
+		margin: 0.625rem auto;
+		width: 50%;
+	}
+}
+
+.profile-links li {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 1rem 2rem;
+}
+
+.profile-links li a.active {
+	background-color: var(--june-bud);
+}
+
+.right-dashboard .tab-content {
+	content: '';
+}
+
+.profile-links li a {
+	margin: 1rem 0;
+	text-decoration: none;
+	color: var(--light);
+	font-size: 0.9rem;
+	transition: all 250ms ease-in;
+}
+
+.profile-links li a:hover {
+	color: var(--june-bud);
+}
+
+.profile-links li a i {
+	font-size: 1rem;
+	margin-right: 0.31rem;
+}
+
+.profile-links li span {
+	margin-left: 0.3rem;
+}
+
+@media (max-width: 48em) {
+	.profile-links li {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.profile-links li a i {
+		font-size: 1.2rem;
+	}
+
+	.profile-links li span {
+		display: none;
+	}
+}
+
+@media (min-width: 48em) and (max-width: 72em) {
+	.profile-links li {
+		justify-content: center;
+		align-items: center;
+	}
+
+	.profile-links li span {
+		display: inline-block;
+		text-align: center;
+	}
+
+	.profile-links li span:nth-child(3) {
+		font-size: 0.7rem;
+	}
+
+	.profile-links li span {
+		margin-left: 0;
+	}
+
+	.profile-links li a i {
+		font-size: 1.2rem;
+		padding-bottom: 0.625rem;
+		display: block;
+	}
+
+	.profile-links li a {
+		font-size: 0.85rem;
+	}
+}
+
+/* Former user details */
 .user-details,
 .transac-history {
 	width: 95%;
@@ -489,6 +601,207 @@ button.create-staff-admin-acct:hover {
 
 .a-dashb-card > .acc-card:first-child {
 	margin-right: 0.625rem;
+}
+
+/* Transaction History */
+.table-container {
+	margin: 5% 3%;
+}
+@media (min-width: 48em) {
+	.table-container {
+		margin: 2%;
+	}
+}
+@media (min-width: 75em) {
+	.table-container {
+		margin: 2em auto;
+		max-width: 75em;
+	}
+}
+
+.general-table {
+	width: 100%;
+	margin-bottom: 1.5em;
+	border-spacing: 0;
+}
+
+@media (min-width: 48em) {
+	.general-table {
+		font-size: 0.9em;
+	}
+}
+@media (min-width: 62em) {
+	.general-table {
+		font-size: 1em;
+	}
+}
+
+.general-table thead {
+	position: absolute;
+	clip: rect(1px 1px 1px 1px);
+	/* IE6, IE7 */
+	padding: 0;
+	border: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+@media (min-width: 48em) {
+	.general-table thead {
+		position: relative;
+		clip: auto;
+		height: auto;
+		width: auto;
+		overflow: auto;
+	}
+}
+.general-table thead th {
+	background-color: var(--dark);
+	border: 1px solid var(--dark);
+	font-weight: normal;
+	text-align: center;
+	color: var(--june-bud);
+}
+.general-table thead th:first-of-type {
+	text-align: left;
+}
+.general-table tbody,
+.general-table tr,
+.general-table th,
+.general-table td {
+	display: block;
+	padding: 0;
+	text-align: left;
+	white-space: normal;
+}
+@media (min-width: 48em) {
+	.general-table tr {
+		display: table-row;
+	}
+}
+.general-table th,
+.general-table td {
+	padding: 0.5em;
+	vertical-align: middle;
+}
+@media (min-width: 30em) {
+	.general-table th,
+	.general-table td {
+		padding: 0.75em 0.5em;
+	}
+}
+@media (min-width: 48em) {
+	.general-table th,
+	.general-table td {
+		display: table-cell;
+		padding: 0.5em;
+	}
+}
+@media (min-width: 62em) {
+	.general-table th,
+	.general-table td {
+		padding: 0.75em 0.5em;
+	}
+}
+@media (min-width: 75em) {
+	.general-table th,
+	.general-table td {
+		padding: 0.75em;
+	}
+}
+.general-table caption {
+	margin-bottom: 1em;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+@media (min-width: 48em) {
+	.general-table caption {
+		font-size: 1.5em;
+	}
+}
+.general-table tfoot {
+	font-size: 0.8em;
+	font-style: italic;
+}
+@media (min-width: 62em) {
+	.general-table tfoot {
+		font-size: 0.9em;
+	}
+}
+@media (min-width: 48em) {
+	.general-table tbody {
+		display: table-row-group;
+	}
+}
+.general-table tbody tr {
+	margin-bottom: 1em;
+}
+@media (min-width: 48em) {
+	.general-table tbody tr {
+		display: table-row;
+		border-width: 1px;
+	}
+}
+.general-table tbody tr:last-of-type {
+	margin-bottom: 0;
+}
+@media (min-width: 48em) {
+	.general-table tbody tr:nth-of-type(even) {
+		background-color: rgba(94, 93, 82, 0.1);
+	}
+}
+.general-table tbody th[scope='row'] {
+	background-color: var(--dark);
+	color: var(--june-bud);
+}
+@media (min-width: 30em) {
+	.general-table tbody th[scope='row'] {
+		border-left: 1px solid var(--dark);
+		border-bottom: 1px solid var(--dark);
+	}
+}
+@media (min-width: 48em) {
+	.general-table tbody th[scope='row'] {
+		background-color: transparent;
+		color: var(--font-color);
+		text-align: left;
+	}
+}
+.general-table tbody td {
+	text-align: right;
+}
+@media (min-width: 48em) {
+	.general-table tbody td {
+		border-left: 1px solid var(--dark);
+		border-bottom: 1px solid var(--dark);
+		text-align: center;
+	}
+}
+@media (min-width: 48em) {
+	.general-table tbody td:last-of-type {
+		border-right: 1px solid var(--dark);
+	}
+}
+.general-table tbody td[data-type='currency'] {
+	text-align: right;
+}
+
+.general-table tbody td[data-title]:before {
+	content: attr(data-title);
+	float: left;
+	font-size: 0.8em;
+	color: rgba(94, 93, 82, 0.75);
+}
+@media (min-width: 30em) {
+	.general-table tbody td[data-title]:before {
+		font-size: 0.9em;
+	}
+}
+@media (min-width: 48em) {
+	.general-table tbody td[data-title]:before {
+		content: none;
+	}
 }
 
 /* Create staff account  */
